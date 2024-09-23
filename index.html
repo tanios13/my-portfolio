@@ -1,866 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Ronan Tanios - Portfolio</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Favicons -->
+  <link href="assets/img/favicon1.png" rel="icon">
+  <link href="assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
 
-    <title>Ronan Portfolio</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Varela" rel="stylesheet">
-
-    <!-- Favicon
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-    <link rel="icon" sizes="16x16" href="assets/img/favicon.ico">
-    <link rel="manifest" href="assets/img/manifest.json">
-    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Stylesheets
-    ================================================== -->
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-
-    <!-- Font Awesome core CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>
 
-    <!-- Hero Section, Background Image change in css -->
-    <div id="top" class="hero background-overlay">
-    
-        <!-- Name & Description -->
-        <div class="hero-content">
-            <h1>Ronan Tanios</h1>
-            <p class="hero-job"><span>Data Science Student</span></p>
-            <p class="hero-job-desc">Engineering and Research </p>
+<body class="index-page">
 
-        </div><!-- /.hero-content -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <div class="hero-arrow page-scroll home-arrow-down">
-            <a class="" href="#intro"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
-        </div><!-- /.hero-arrow -->
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Ronan Portfolio</h1>
+      </a>
 
-    </div><!-- /.hero -->
-    <!-- End Hero -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-    <!-- Header -->
-    <header id="masthead" class="site-header">
-        <nav id="primary-navigation" class="site-navigation" data-spy="affix">
-            <div class="container">
-                <div class="navbar-header page-scroll">
+    </div>
+  </header>
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#portfolio-perfect-collapse" aria-expanded="false" >
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <!-- Name -->
-                    <div class="page-scroll site-logo">
-                        <a href="#top">Ronan</a>
-                    </div>
+  <main class="main">
 
-                </div><!-- /.navbar-header -->
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-                <div class="main-menu collapse navbar-collapse" id="portfolio-perfect-collapse">
+      <img src="assets/img/hero-img.jpg" alt="" data-aos="fade-in">
 
-                    <!-- Navigation -->
-                    <ul class="nav navbar-nav navbar-right">
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>Ronan Tanios</h2>
+        <p>Data Science and Machine Learning <span class="typed" data-typed-items="Student, Researcher, Engineer, Teaching Assistant"></span></p>
+      </div>
 
-                        <li class="page-scroll"><a href="#top">Home</a></li>
-                        <li class="page-scroll"><a href="#about">About</a></li>
-                        <li class="page-scroll"><a href="#experience">Experience</a></li>
-                        <li class="page-scroll"><a href="#projects">Projects</a></li>
-                        <li class="page-scroll"><a href="#contact">Contact</a></li>
-                        
-                    </ul><!-- /.navbar-nav -->
+    </section><!-- /Hero Section -->
 
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </nav><!-- /.primary-navigation -->
-    </header><!-- /#header -->
-    <!-- End Header -->
+    <!-- About Section -->
+    <section id="about" class="about section">
 
-    <!-- Main content -->
-    <main id="main" class="site-main">
-
-        <!-- About section -->
-        <section class="site-section section-about text-center" id="about">
-            <div class="container">
-                <h2>ABOUT ME</h2>
-                <p class="section-subtitle"><span>Data Science and Machine Learning Passionate</span></p>
-                <div class="row">
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="feature-about">
-                            <div class="medium-rectangle rectangle">
-                                <i class="fa fa-laptop" aria-hidden="true"></i>
-                            </div><!-- /.rectangle -->
-                            <h3>Large Language Models</h3>
-                            <p>Our approach to website design is to create a website that strengthens your company’s brand while ensuring ease of use and simplicity for your audience</p>
-                        </div><!-- /.feature-about -->
-                    </div>                    
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="feature-about">
-                            <div class="medium-rectangle rectangle">
-                                <i class="fa fa-code" aria-hidden="true"></i>
-                            </div><!-- /.rectangle -->
-                            <h3>Computer Vision</h3>
-                            <p>The web development process involves taking the graphical elements defined in the design process and coding them into a custom theme.</p>
-                        </div><!-- /.feature-about -->
-                    </div>                    
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="feature-about">
-                            <div class="medium-rectangle rectangle">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </div><!-- /.rectangle -->
-                            <h3>Machine Learning</h3>
-                            <p>Go farther than you thought you could. With us you can go farther then ever before. Be in top results of searches.</p>
-                        </div><!-- /.feature-about -->
-                    </div>                    
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="feature-about">
-                            <div class="medium-rectangle rectangle">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </div><!-- /.rectangle -->
-                            <h3>Software Engineering</h3>
-                            <p>It's important to keep your brand consistent and recognizable across all platforms</p>
-                        </div><!-- /.feature-about -->
-                    </div>
-                </div>
-            </div>
-        </section><!-- /.section-about -->
-        <!-- End About section -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
           
-
-        <!-- Quote section -->
-		<section class="section-background section-quote background-overlay text-center", id="experience">
-			<div class="container">
-                <p>
-                    MSc in Data Science Student at <span>ETH Zurich</span>,<br>
-                    BSc in Computer Science at <span>EPFL</span>,<br>
-                    Exchange Student at <span>KTH</span>.
-                </p>			
+          <div >
+            <div class="about-me">
+              <h4>About me</h4>
+              <p> I am currently pursuing a Master's degree in Data Science at ETH Zurich, having previously earned a Bachelor's degree 
+                in Computer Science from EPFL (École Polytechnique Fédérale de Lausanne). During my third year, I had the opportunity 
+                to participate in an exchange program at KTH Royal Institute of Technology in Stockholm. 
+              </p> 
+              <p> Throughout my academic journey, I developed a strong passion for problem-solving, software engineering, 
+                and, in particular, machine learning and data science. 
+              </p> 
+              <p> I have nurtured this passion through various internships, where I gained valuable experience from 
+                industry professionals while applying my skills to real-world challenges. 
+              </p>
             </div>
-		</section><!-- /.section-quote -->
-        <!-- End Quote section -->
+        </div>
 
-        <!-- History section --> 
-        <section class="section-history">
-            <div class="container">          
-                <div class="text-center section-diff-title">     
-                    <h2>Experience</h2>
-                    <p>Education and Professional Timeline</p>
-                </div> 
-                <!-- Timeline --> 
-                <ul class="timeline">
-                    <!-- Timeline badge --> 
-                    <li class="timeline-start">
-                        <div class="rectangle"><span>2020</span></div>
-                    </li><!-- /.timeline-start -->
+      </div>
 
-                    <!-- Timeline job & description  --> 
-                    <li>
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <div class="timeline-date">
-                                    <p>Sep</p>
-                                </div><!-- /.timeline-date -->
-                                <div class="timeline-position">
-                                    <p>BSc in Computer Science at EPFL</p>
-                                </div><!-- /.timeline-position -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li>
+    </section><!-- /About Section -->
 
-                    <!-- Timeline badge --> 
-                    <li class="timeline-start">
-                        <div class="rectangle"><span>2021</span></div>
-                    </li><!-- /.timeline-start -->
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
 
-                    <!-- Timeline job & description, inverted  --> 
-                    <li class="timeline-inverted">
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               <div class="timeline-position">
-                                    <p>Student Mentor</p>
-                                </div><!-- /.timeline-position -->
-                                <div class="timeline-date">
-                                    <p>Sep</p>
-                                </div><!-- /.timeline-date -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+      </div><!-- End Section Title -->
 
-                    <!-- Timeline badge --> 
-                    <li class="timeline-start">
-                        <div class="rectangle"><span>2022</span></div>
-                    </li><!-- /.timeline-start -->
+      <div class="container">
 
-                    <li>
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <div class="timeline-date">
-                                    <p>Aug</p>
-                                </div><!-- /.timeline-date -->
-                                <div class="timeline-position">
-                                    <p>Exchange Student at KTH</p>
-                                </div><!-- /.timeline-position -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li>
+        <div class="row">
 
-                    <!-- Timeline badge --> 
-                    <li class="timeline-start">
-                        <div class="rectangle"><span>2023</span></div>
-                    </li><!-- /.timeline-start -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
 
-                    <!-- Timeline job & description, inverted  --> 
-                    <li class="timeline-inverted">
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               <div class="timeline-position">
-                                    <p>Data Science and Machine Learning Intern at CME</p>
-                                </div><!-- /.timeline-position -->
-                                <div class="timeline-date">
-                                    <p>Jun</p>
-                                </div><!-- /.timeline-date -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                            
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+            <div class="resume-item pb-0">
+              <h4>Ronan Tanios</h4>
+              <p><em>Data Science and Machine Learning student and enthusiast. 1 year-experienced in designing and developing data science and machine learning 
+                solutions and using software engineering best practices such as object oriented, CI/CD...</em></p>
+              <ul>
+                <li>French and Lebansese Citizen</li>
+                <li>Located in Zurich, Switzerland</li>
+                <li>Looking for positions in Switzerland and Sweden (Stockholm)</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
 
-                    <!-- Timeline job & description, inverted  --> 
-                    <li>
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <div class="timeline-date">
-                                    <p>Aug</p>
-                                </div><!-- /.timeline-date -->
-                               <div class="timeline-position">
-                                    <p>Machine Learning Intern at Keyvian</p>
-                                </div><!-- /.timeline-position -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>MSc of Data Science</h4>
+              <h5>2023 - 2025</h5>
+              <p><em>ETH Zurich, Zurich, Switzerland</em></p>
+              <p>Relevant course work: Probabilistic AI, LLM, NLP, Machine Perception, Computer Vision, Machine Learning in Microcontrollers, Big Data, Data Sciene for Decision Making, Machine Learning in Finance and Insurance</p>
+            </div><!-- Edn Resume Item -->
 
-                    <li class="timeline-inverted">
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               <div class="timeline-position">
-                                    <p>MSc in Data Science at ETH Zurich</p>
-                                </div><!-- /.timeline-position -->
-                                <div class="timeline-date">
-                                    <p>Sep</p>
-                                </div><!-- /.timeline-date -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+            <div class="resume-item">
+              <h4>Exchange Program in Computer Science</h4>
+              <h5>2022 - 2023</h5>
+              <p><em>KTH Royal Institute of Technology, Stockholm, Sweden</em></p>
+              <p>Relevant course Worl: Deep Learning, Database Technology, Artificial Intelligence, Software Engineering, Computer Security, Methods in High Performance Computing</p>
+            </div><!-- Edn Resume Item -->
+            <div class="resume-item">
+              <h4>BSc of Computer Science</h4>
+              <h5>2020 - 2023</h5>
+              <p><em>EPFL (Ecole Polytechnique Federale de Lausanne), Lausanne, Switzerland</em></p>
+              <p>Relevant course work: Object Oriented Programming, Functional Programming, Intro to Machine Learning, Programming in C, Computer Architecture</p>
+            </div><!-- Edn Resume Item -->
 
-                    <li>
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <div class="timeline-date">
-                                    <p>Sep</p>
-                                </div><!-- /.timeline-date -->
-                               <div class="timeline-position">
-                                    <p>Simulation Engineer at AMZ Racing</p>
-                                </div><!-- /.timeline-position -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+          </div>
 
-                    <!-- Timeline badge --> 
-                    <li class="timeline-start">
-                        <div class="rectangle"><span>2024</span></div>
-                    </li><!-- /.timeline-start -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Teaching Assistant</h4>
+              <h5>Sep 2024 - Present</h5>
+              <p><em>ETH Zurich, Zurich, Switzerland </em></p>
+              <ul>
+                
+              </ul>
+            </div><!-- Edn Resume Item -->
 
-                    <li class="timeline-inverted">
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               <div class="timeline-position">
-                                    <p>Data Science Developper at Axpo Group</p>
-                                </div><!-- /.timeline-position -->
-                                <div class="timeline-date">
-                                    <p>Feb</p>
-                                </div><!-- /.timeline-date -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+            <div class="resume-item">
+              <h4>Data Science Developer</h4>
+              <h5>Feb 2024 - Aug 2024</h5>
+              <p><em>Axpo, Zurich, Switzerland</em></p>
+              <ul>
+              </ul>
+            </div><!-- Edn Resume Item -->
 
-                    <li>
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <div class="timeline-date">
-                                    <p>Sep</p>
-                                </div><!-- /.timeline-date -->
-                               <div class="timeline-position">
-                                    <p>Data Science and Machine Learning Teaching Assistant</p>
-                                </div><!-- /.timeline-position -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+            <div class="resume-item">
+              <h4>Simulation Engineer</h4>
+              <h5>Sep 2023 - Jan 2024</h5>
+              <p><em>AMZ Racing, Zurich, Switzerland </em></p>
+              <ul>
+                
+              </ul>
+            </div><!-- Edn Resume Item -->
 
-                    <li class="timeline-inverted">
-                        <div class="rectangle timeline-rectangle"></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               <div class="timeline-position">
-                                    <p>AI Research Intern at PSI</p>
-                                </div><!-- /.timeline-position -->
-                                <div class="timeline-date">
-                                    <p>Oct</p>
-                                </div><!-- /.timeline-date -->
-                            </div><!-- /.timeline-heading -->
-                            <div class="timeline-body">
-                                <div class="timeline-body-thumb">
-                                    <img src="assets/img/timeline-img.jpg" class="img-res" alt="">
-                                </div><!-- /.timeline-body-thumb -->
-                                <p>Designing and developing a Wordpress Website</p>
-                            </div><!-- /.timeline-body -->
-                        </div><!-- /.timeline-panel -->
-                    </li><!-- /.timeline-inverted -->
+            <div class="resume-item">
+              <h4>Machine Learning Engineer</h4>
+              <h5>Aug 2023 - Sep 2023</h5>
+              <p><em>Keyvian, Lausanne, Switzerland </em></p>
+              <ul>
+                
+              </ul>
+            </div><!-- Edn Resume Item -->
 
-                    <!-- Timeline Badge  --> 
-                    <li class="timeline-end">
-                        <div class="rectangle"><span>More</span></div>
-                    </li><!-- /.timeline-end -->
-                </ul><!-- /.timeline -->
-            </div>
-        </section><!-- /.section-history -->
-        <!-- End History section --> 
-
-        
-
-        <!-- Clients section --> 
-        <section class="section-clients">
-            <div class="container">
-                <div class="text-center section-diff-title">     
-                    <h2>Companies I’ve Worked So Far</h2>
-                    <p></p>
-                </div> 
-
-                <div class="clients-carousel">
-                    <!-- Client --> 
-                    <a href="#" class="client">
-                        <img src="assets/img/client-1.png" class="img-responsive" alt="">
-                    </a><!-- /.client -->                    
-                    <!-- Client -->
-                    <a href="#" class="client">
-                        <img src="assets/img/client-2.png" class="img-responsive" alt="">
-                    </a><!-- /.client -->  
-                </div><!-- /.clients-carousel -->
-            </div>
-        </section><!-- /.section-clients -->
-        <!-- End Clients section --> 
+            <div class="resume-item">
+              <h4>Machine Learning Engineer and Data Scientist</h4>
+              <h5>Jun 2023 - Jul 2023</h5>
+              <p><em>CME Offshore, Beirut, Lebanon </em></p>
+              <ul>
+                
+              </ul>
+            </div><!-- Edn Resume Item -->
 
 
-        <!-- Portfolio/Works section --> 
-        <section class="site-section section-works" id="projects">
-            <div class="container">
-                <h2>Projects</h2>
 
-                <div class="portfolio">
-                    <ul class="portfolio-sorting list-inline">
-                        <li><a href="#" class=" active" data-group="all">all</a></li>
-                        <li><a href="#" class="" data-group="llm">Large Language Model</a></li>
-                        <li><a href="#" class="" data-group="cv">Computer Vision</a></li>
-                        <li><a href="#" class="" data-group="ml">Machine Learning</a></li>
-                    </ul><!-- /.portfolio-sorting  -->
-
-                    <div id="grid">
-                        
-                        <!-- Portfolio item --> 
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["ml"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-1.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem1">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Student Dropout Predictor</h3>
-                                    <p>Machine Learning</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["llm"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-2.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem2">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>University Chatbot</h3>
-                                    <p>Large Language Models</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["ml"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-4.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem3">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Brand Anomaly Detection</h3>
-                                    <p>Machine Learning</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["llm"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-3.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem4">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Automated Text Analysis</h3>
-                                    <p>Large Language Models</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["ml"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-5.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem5">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Air Polution Prediction</h3>
-                                    <p>Machine Learning</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["ml"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-6.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem6">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>House Price Prediction</h3>
-                                    <p>Machine Learning</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["llm"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-7.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem7">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Calibration and Prompt Engineering</h3>
-                                    <p>Large Language Models</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["llm"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-8.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem8">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Building and Breaking LLM Watermark</h3>
-                                    <p>Large Language Models</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-
-                        <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["llm"]'>
-                            <div class="portfolio-item">
-                                <div class="portfolio-item-thumb">
-                                    <img src="assets/img/portfolio-8.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem9">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div><!-- /.portfolio-item-thumb  -->
-                                <div class="portfolio-info">
-                                    <h3>Building RAG</h3>
-                                    <p>Large Language Models</p>
-                                </div><!-- /.portfolio-info  -->
-                            </div>
-                        </div><!-- /.col-md-3  -->
-
-                    </div><!-- /#grid -->
-                </div>
-            </div>
-        </section><!-- /.section-works -->
-        <!-- End Works section --> 
-
-        <!-- Contacts section --> 
-        <section class="site-section section-contact" id="contact">
-            <div class="container">
-                <h2>CONTACT ME</h2>
-                <p class="section-subtitle"><span>Here i am</span></p>
-                <div class="row">
-                    <form>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Name" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="email" placeholder="Email" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Subject" required>
-                        </div>
-                        <div class="col-sm-12">
-                            <textarea class="form-control" placeholder="Your Message"  required></textarea>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <button class="btn btn-inverted">Send Message</button>
-                        </div>  
-                    </form>
-                </div>
-            </div>
-        </section><!-- /.section-contact-->
-        <!-- End Contacts section --> 
-        
-        <!-- Social Networks section --> 
-        <section class="section-networks blue-bg">
-            <div class="container">
-                <a href="#" class="rectangle">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a href="#" class="rectangle">
-                    <i class="fa fa-instagram"></i>
-                </a>
-                <a href="#" class="rectangle">
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <a href="#" class="rectangle">
-                    <i class="fa fa-youtube-play"></i>
-                </a>
-                <a href="#" class="rectangle">
-                    <i class="fa fa-envelope"></i>
-                </a>
-                <a href="#" class="rectangle">
-                    <i class="fa fa-dribbble"></i>
-                </a>
-            </div>
-        </section><!-- /.section-networks-->
-        <!-- End Social Networks section --> 
-
-    </main><!-- /#main -->
-    <!-- End Main content -->
-
-    <!-- Footer --> 
-    <footer id="colophon" class="site-footer">
-
-        <div class="container-fluid">
-
-            <ul class="list-unstyled list-inline">
-                <li class="page-scroll"><a href="#top">Home</a></li>
-                <li class="page-scroll"><a href="#about">About</a></li>
-                <li class="page-scroll"><a href="#experience">Experience</a></li>
-                <li class="page-scroll"><a href="#projects">Projects</a></li>
-                <li class="page-scroll"><a href="#contact">Contact</a></li>
-            </ul>
-
-            <div class="page-scroll">
-                <a href="#top" class="rectangle">
-                    <i class="fa fa-angle-double-up"></i>
-                </a>
-            </div>
+          </div>
 
         </div>
 
-        <div class="container text-center">
-            <p class="copyright">&copy; <a href="http://pixelperfect.mk/" target="_blank">PixelPerfect</a> - 2017</p>
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="skills" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Python</h3>
+              </a>
+              <p>2 years of experience in developing Python solutions, including but not limited to: machine learning, web scraping, task automation, 
+                big data tools (PySpark...), unit testing, concurrency, parallelism, and ROS integration for robotics.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Machine Learning</h3>
+              </a>
+              <p>1 year of experience integrating machine learning models, including regression, classification, 
+                clustering, and ensemble methods (Random Forest, XGBoost), with practical applications in predictive analytics and data-driven decision-making.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Large Language Models</h3>
+              </a>
+              <p>Experienced in working with natural language processing techniques, including prompt engineering for
+              optimized model performance. Skilled in implementing watermarking for content authentication, building retrieval-augmented 
+              generation (RAG) systems and knowledge bases to enhance model accuracy and frameworks to develop chatbots, 
+                sentiment analysis tools, and automated text generation systems using models like GPT and BERT.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Computer Vision</h3>
+              </a>
+              <p>Skilled in developing computer vision applications using TensorFlow, PyTorch, and Keras for object detection, 
+                image segmentation, and recognition, with applications in autonomous driving.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Software Engineering</h3>
+              </a>
+              <p>2 years of experience in software development methodologies, including backend development, concurrency and parallelism, 
+                version control systems (Git), Object Oriented Programming and CI/CD pipelines for scalable and maintainable software solutions.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Data Engineering</h3>
+              </a>
+              <p>2 years of experience in data preparation, visualization, and processing using Pandas and Polars. Proficient in techniques such as group by, merging, filtering, pivoting, reshaping, and handling missing data for efficient data analysis and manipulation.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
         </div>
 
-    </footer><!-- /#footer -->
-    <!-- End Footer --> 
+      </div>
 
-    <!-- Modals -->
-    <div id="portfolioItem1" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-1.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Student Dropout Predictor</h4>
-                    <p>Utilized gradient boosting, random forests, and deep learning algorithms to achieve an 85% accuracy in predicting student dropout rates from a university database.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    </section><!-- /Services Section -->
 
-    <div id="portfolioItem2" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-2.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">University Chatbot</h4>
-                    <p>Integrated OpenAI's API with the LangChain library to implement a fine-tuned, state-of-the-art chatbot. Additionally, built a RAG (Retrieval-Augmented Generation) vector database for enhanced performance.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    <!-- Stats Section -->
+    <section id="stats" class="stats section accent-background">
 
-    <div id="portfolioItem3" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-4.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Project title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
 
-    <div id="portfolioItem4" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-3.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Project title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
-    <div id="portfolioItem5" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-5.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Project title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        <div class="row gy-4">
 
-    <div id="portfolioItem6" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-6.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Project title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="0" class="purecounter">2</span>
+              <p>Years of Experience</p>
+            </div>
+          </div><!-- End Stats Item -->
 
-    <div id="portfolioItem7" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-7.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Project title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="0" class="purecounter">9</span>
+              <p>Featured Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
 
-    <div id="portfolioItem8" class="modal fade fade-scale" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="rectangle" data-dismiss="modal"><i class="fa fa-times"></i></a>
-                    <img class="img-res" src="assets/img/portfolio-8.jpg" alt="">
-                </div>
-                <div class="modal-body">
-                    <h4 class="modal-title">Project title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn">Visit Page</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="0" class="purecounter">1453</span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- jQuery core js | Do not Delete -->
-    <script src="assets/js/jquery.min.js"></script>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="0" class="purecounter">2</span>
+              <p>Awards</p>
+            </div>
+          </div><!-- End Stats Item -->
 
-    <!-- Bootstrap core js | Do not Delete -->
-    <script src="assets/js/bootstrap.min.js"></script>
+        </div>
 
-    <!-- Bootstrap progressbar JS -->
-    <script src="assets/js/bootstrap-progressbar.min.js"></script>
+      </div>
 
-    <!-- Count To JS -->
-    <script src="assets/js/jquery.countTo.min.js"></script>
+    </section><!-- /Stats Section -->
 
-    <!-- Easing JS -->
-    <script src="assets/js/jquery.easing.min.js"></script>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
 
-    <!-- Shuffle JS -->
-    <script src="assets/js/jquery.shuffle.min.js"></script>
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+      </div><!-- End Section Title -->
 
-    <!-- Slick Carousel JS -->
-    <script src="assets/js/slick.min.js"></script>
+      <div class="container">
 
-    <!-- Touchswipe JS -->
-    <script src="assets/js/touchswipe.min.js"></script>
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
-  
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-ml">Machine Learning</li>
+            <li data-filter=".filter-llm">Large Language Models</li>
+            <li data-filter=".filter-cv">Computer Vision</li>
+          </ul><!-- End Portfolio Filters -->
+
+                
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Machine Learning Project 1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Student Dropout Predictor</h4>
+                <p>Machine Learning</p>
+                <a href="assets/img/portfolio/portfolio-1.jpg" title="Student Dropout Predictor" data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Large Language Model Project 1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
+              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>University Chatbot</h4>
+                <p>Large Language Models</p>
+                <a href="assets/img/portfolio/portfolio-2.jpg" title="University Chatbot" data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Machine Learning Project 2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
+              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Brand Anomaly Detection</h4>
+                <p>Machine Learning</p>
+                <a href="assets/img/portfolio/portfolio-3.jpg" title="Brand Anomaly Detection" data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Large Language Model Project 2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Automated Text Analysis</h4>
+                <p>Large Language Models</p>
+                <a href="assets/img/portfolio/portfolio-4.jpg" title="Automated Text Analysis" data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Machine Learning Project 3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Air Pollution Prediction</h4>
+                <p>Machine Learning</p>
+                <a href="assets/img/portfolio/portfolio-5.jpg" title="Air Pollution Prediction" data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Machine Learning Project 4 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>House Price Prediction</h4>
+                <p>Machine Learning</p>
+                <a href="assets/img/portfolio/portfolio-6.jpg" title="House Price Prediction" data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Large Language Model Project 3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Calibration and Prompt Engineering</h4>
+                <p>Large Language Models</p>
+                <a href="assets/img/portfolio/portfolio-7.jpg" title="Calibration and Prompt Engineering" data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Large Language Model Project 4 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Building and Breaking LLM Watermark</h4>
+                <p>Large Language Models</p>
+                <a href="assets/img/portfolio/portfolio-8.jpg" title="Building and Breaking LLM Watermark" data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Large Language Model Project 5 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Building RAG</h4>
+                <p>Large Language Models</p>
+                <a href="assets/img/portfolio/portfolio-9.jpg" title="Building RAG" data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">DevFolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by Ronan Tanios
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
