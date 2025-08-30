@@ -1,531 +1,967 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ronan Tanios - Data Science Master Student</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Ronan Tanios - Portfolio</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+            :root {
+                --primary-color: #00d4ff;
+                --secondary-color: #0066ff;
+                --accent-color: #ff6b35;
+                --dark-bg: #0a0a0a;
+                --darker-bg: #050505;
+                --card-bg: #1a1a1a;
+                --text-primary: #ffffff;
+                --text-secondary: #b3b3b3;
+                --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                --glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon1.png" rel="icon">
-  <link href="assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: var(--dark-bg);
+                color: var(--text-primary);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+            /* Animated background */
+            .bg-animation {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+            .bg-animation::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 40% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%);
+                animation: float 6s ease-in-out infinite;
+            }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(180deg); }
+            }
 
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+            /* Navigation */
+            nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.9);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            }
 
-<body class="index-page">
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2rem;
+            }
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Ronan Portfolio</h1>
-      </a>
+            .nav-links {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+            }
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+            .nav-links a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+            }
 
-    </div>
-  </header>
+            .nav-links a:hover {
+                color: var(--primary-color);
+            }
 
-  <main class="main">
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--gradient);
+                transition: width 0.3s ease;
+            }
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+            .nav-links a:hover::after {
+                width: 100%;
+            }
 
-      <img src="assets/img/hero-img.jpg" alt="" data-aos="fade-in">
+            /* Hero Section */
+            .hero {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                position: relative;
+            }
 
-      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>Ronan Tanios</h2>
-        <p>Data Science and Machine Learning <span class="typed" data-typed-items="Student, Researcher, Engineer, Teaching Assistant"></span></p>
-      </div>
+            .hero-content h1 {
+                font-size: 3.5rem;
+                margin-bottom: 1rem;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: glow 2s ease-in-out infinite alternate;
+            }
 
-    </section><!-- /Hero Section -->
+            @keyframes glow {
+                from { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3)); }
+                to { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6)); }
+            }
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+                color: var(--text-secondary);
+                margin-bottom: 2rem;
+            }
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+            .cta-button {
+                display: inline-block;
+                padding: 1rem 2rem;
+                background: var(--gradient);
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                box-shadow: var(--glow);
+            }
 
-          
-          <div >
-            <div class="about-me">
-              <h4>About me</h4>
-              <p> I am currently pursuing a Master's degree in Data Science at ETH Zurich, having previously earned a Bachelor's degree 
-                in Computer Science from EPFL (École Polytechnique Fédérale de Lausanne). During my third year, I had the opportunity 
-                to participate in an exchange program at KTH Royal Institute of Technology in Stockholm. 
-              </p> 
-              <p> Throughout my academic journey, I developed a strong passion for problem-solving, software engineering, 
-                and, in particular, machine learning and data science. 
-              </p> 
-              <p> I have nurtured this passion through various internships, where I gained valuable experience from 
-                industry professionals while applying my skills to real-world challenges. 
-              </p>
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
+            }
+
+            /* Sections */
+            .section {
+                padding: 5rem 0;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .section h2 {
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: 3rem;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            /* About Section */
+            .about-content {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .about-text {
+                font-size: 1.1rem;
+                color: var(--text-secondary);
+            }
+
+            /* Timeline Styles */
+            .timeline {
+                position: relative;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 3px;
+                background: var(--gradient);
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -1.5px;
+            }
+
+            .timeline-item {
+                padding: 10px 40px;
+                position: relative;
+                background-color: inherit;
+                width: 50%;
+            }
+
+            .timeline-item::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                right: -10px;
+                background-color: var(--dark-bg);
+                border: 3px solid var(--primary-color);
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 50%;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: -10px;
+            }
+
+            .timeline-content {
+                padding: 20px 30px;
+                background: var(--card-bg);
+                position: relative;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 212, 255, 0.2);
+                transition: all 0.3s ease;
+            }
+
+            .timeline-content:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary-color);
+                box-shadow: var(--glow);
+            }
+
+            .timeline-content h3 {
+                color: var(--primary-color);
+                margin-bottom: 0.5rem;
+            }
+
+            .timeline-content h4 {
+                color: var(--text-primary);
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+
+            .timeline-date {
+                color: var(--accent-color);
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            /* Skills Section */
+            .skills-container {
+                display: grid;
+                gap: 3rem;
+            }
+
+            .skill-category h3 {
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .skill-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+            }
+
+            .skill-item {
+                background: var(--card-bg);
+                padding: 1.5rem;
+                border-radius: 12px;
+                text-align: center;
+                border: 2px solid rgba(0, 212, 255, 0.2);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .skill-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .skill-item:hover::before {
+                left: 100%;
+            }
+
+            .skill-item:hover {
+                transform: translateY(-8px);
+                border-color: var(--primary-color);
+                box-shadow: var(--glow);
+            }
+
+            .skill-item.advanced {
+                border-color: rgba(0, 255, 128, 0.3);
+            }
+
+            .skill-item.intermediate {
+                border-color: rgba(255, 193, 7, 0.3);
+            }
+
+            .skill-item i {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+
+            .skill-item h4 {
+                color: var(--text-primary);
+                margin-bottom: 0.5rem;
+            }
+
+            .skill-level {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.8rem;
+                border-radius: 20px;
+                font-weight: 600;
+            }
+
+            .skill-item.advanced .skill-level {
+                background: rgba(0, 255, 128, 0.2);
+                color: #00ff80;
+            }
+
+            .skill-item.intermediate .skill-level {
+                background: rgba(255, 193, 7, 0.2);
+                color: #ffc107;
+            }
+
+            /* Projects Section */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .project-card {
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 2rem;
+                border: 1px solid rgba(0, 212, 255, 0.2);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .project-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .project-card:hover::before {
+                left: 100%;
+            }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                border-color: var(--primary-color);
+                box-shadow: var(--glow);
+            }
+
+            .project-card h3 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+
+            .project-card p {
+                color: var(--text-secondary);
+                margin-bottom: 1rem;
+            }
+
+            .project-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .tag {
+                background: rgba(0, 212, 255, 0.2);
+                color: var(--primary-color);
+                padding: 0.3rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+            }
+
+            .project-links {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .project-links a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .project-links a:hover {
+                color: var(--primary-color);
+            }
+
+            /* Contact Section */
+            .contact-content {
+                text-align: center;
+            }
+
+            .contact-links {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .contact-link {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: var(--text-secondary);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                padding: 1rem 1.5rem;
+                border: 1px solid rgba(0, 212, 255, 0.2);
+                border-radius: 10px;
+            }
+
+            .contact-link:hover {
+                color: var(--primary-color);
+                border-color: var(--primary-color);
+                transform: translateY(-3px);
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 2rem;
+                border-top: 1px solid rgba(0, 212, 255, 0.2);
+                background: var(--darker-bg);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .hero-content h1 {
+                    font-size: 2.5rem;
+                }
+
+                .about-content {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+
+                .contact-links {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .timeline::after {
+                    left: 31px;
+                }
+
+                .timeline-item {
+                    width: 100%;
+                    padding-left: 70px;
+                    padding-right: 25px;
+                }
+
+                .timeline-item::before {
+                    left: 60px;
+                    border: medium solid var(--primary-color);
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent var(--primary-color) transparent transparent;
+                }
+
+                .timeline-item:nth-child(odd) {
+                    left: 0%;
+                }
+
+                .timeline-item:nth-child(even) {
+                    left: 0%;
+                }
+
+                .timeline-item::after {
+                    left: 22px;
+                }
+
+                .skill-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                }
+            }
+
+            /* Scroll indicator */
+            .scroll-indicator {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--gradient);
+                transform-origin: left;
+                transform: scaleX(0);
+                z-index: 1001;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg-animation"></div>
+        <div class="scroll-indicator" id="scrollIndicator"></div>
+
+        <nav>
+            <div class="nav-container">
+                <div class="logo">Ronan Tanios</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-        </div>
+        </nav>
 
-      </div>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Ronan Tanios</h1>
+                <p class="subtitle">AI Engineer & Researcher | ETH Zürich MSc | Building Production ML/Software Systems at Scale</p>
+                <a href="#projects" class="cta-button">Explore My Work</a>
+            </div>
+        </section>
 
-    </section><!-- /About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>AI Engineer with hands-on experience building production ML and Software systems in leading tech environments. Currently pursuing MSc in Data Science at ETH Zürich while conducting thesis research on diffusion language models at IBM Research. Proven track record of shipping scalable AI solutions from research to production.</p>
+                    <br>
+                    <p>Expert in end-to-end ML pipelines, LLM systems, and computer vision applications. Winner of 200+ participant trading challenge (Optiver) and contributor to industry partnerships with Fortune 500 companies. Passionate about translating cutting-edge research into high-impact products.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Ronan Tanios</h4>
-              <p><em>Data Science and Machine Learning student and enthusiast. 1 year-experienced in designing and developing data science and machine learning 
-                solutions and using software engineering best practices such as object oriented, CI/CD...</em></p>
-              <ul>
-                <li>French and Lebansese Citizen</li>
-                <li>Located in Zurich, Switzerland</li>
-                <li>Looking for positions in Switzerland and Sweden (Stockholm)</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>MSc of Data Science</h4>
-              <h5>2023 - 2025</h5>
-              <p><em>ETH Zurich, Zurich, Switzerland</em></p>
-              <p>Relevant course work: Probabilistic AI, LLM, NLP, Machine Perception, Computer Vision, Machine Learning in Microcontrollers, Big Data, Data Science for Decision Making, Machine Learning in Finance and Insurance</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Exchange Program in Computer Science</h4>
-              <h5>2022 - 2023</h5>
-              <p><em>KTH Royal Institute of Technology, Stockholm, Sweden</em></p>
-              <p>Relevant course work: Deep Learning, Database Technology, Artificial Intelligence, Software Engineering, Computer Security, Methods in High Performance Computing</p>
-            </div><!-- Edn Resume Item -->
-            <div class="resume-item">
-              <h4>BSc of Computer Science</h4>
-              <h5>2020 - 2023</h5>
-              <p><em>EPFL (Ecole Polytechnique Federale de Lausanne), Lausanne, Switzerland</em></p>
-              <p>Relevant course work: Object Oriented Programming, Functional Programming, Intro to Machine Learning, Programming in C, Computer Architecture,, Algorithms, Concurrency and Parallelism</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Machine Learning and Data Science Teaching Assistant</h4>
-              <h5>Sep 2024 - Present</h5>
-              <p><em>ETH Zurich, Zurich, Switzerland </em></p>
-              <ul>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Software Engineer</h4>
-              <h5>Feb 2024 - Aug 2024</h5>
-              <p><em>Axpo, Zurich, Switzerland</em></p>
-              <ul>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Simulation Engineer</h4>
-              <h5>Sep 2023 - Jan 2024</h5>
-              <p><em>AMZ Racing, Zurich, Switzerland </em></p>
-              <ul>
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item advanced">
+                            <i class="fab fa-python"></i>
+                            <h4>Python</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-database"></i>
+                            <h4>SQL</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fab fa-java"></i>
+                            <h4>Java</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-code"></i>
+                            <h4>C</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-project-diagram"></i>
+                            <h4>Scala</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fab fa-js"></i>
+                            <h4>JavaScript</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
                 
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Machine Learning Engineer</h4>
-              <h5>Aug 2023 - Sep 2023</h5>
-              <p><em>Keyvian, Lausanne, Switzerland </em></p>
-              <ul>
+                <div class="skill-category">
+                    <h3>Technologies & Frameworks</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item advanced">
+                            <i class="fab fa-git-alt"></i>
+                            <h4>Git</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-fire"></i>
+                            <h4>Spark</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-server"></i>
+                            <h4>HDFS</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fab fa-docker"></i>
+                            <h4>Docker</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-cogs"></i>
+                            <h4>REST APIs</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-dharmachakra"></i>
+                            <h4>Kubernetes</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>PowerBI</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
                 
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Machine Learning Engineer and Data Scientist</h4>
-              <h5>Jun 2023 - Jul 2023</h5>
-              <p><em>CME Offshore, Beirut, Lebanon </em></p>
-              <ul>
-                
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Services Section -->
-    <section id="skills" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Python</h3>
-              </a>
-              <p>2 years of experience in developing Python solutions, including but not limited to: machine learning, web scraping, task automation, 
-                big data tools (PySpark...), unit testing, concurrency, parallelism, and ROS integration for robotics.</p>
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item advanced">
+                            <i class="fas fa-brain"></i>
+                            <h4>Machine Learning</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-robot"></i>
+                            <h4>Deep Learning</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-eye"></i>
+                            <h4>Computer Vision</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-language"></i>
+                            <h4>NLP</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>MLOps</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-microchip"></i>
+                            <h4>LLMs</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div><!-- End Service Item -->
+        </section>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Machine Learning</h3>
-              </a>
-              <p>1 year of experience integrating machine learning models, including regression, classification, 
-                clustering, and ensemble methods (Random Forest, XGBoost), with practical applications in predictive analytics and data-driven decision-making.</p>
+        <section id="projects" class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Computer Vision for Autonomous Cars</h3>
+                    <p>Semantic Segmentation and Depth Estimation project for autonomous vehicles. Implemented DeepLabV3+ with multi-task learning for dense prediction tasks including semantic segmentation and depth estimation.</p>
+                    <div class="project-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Autonomous Cars</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>3D Object Detection from LiDAR Point Clouds</h3>
+                    <p>Built a 2-stage object detector for autonomous vehicles using LiDAR point clouds. Implemented Region Proposal Network and Refinement Network for coarse and refined detections, with multi-modal data visualization including 3D bounding boxes and semantic segmentation.</p>
+                    <div class="project-tags">
+                        <span class="tag">LiDAR</span>
+                        <span class="tag">3D Object Detection</span>
+                        <span class="tag">Point Clouds</span>
+                        <span class="tag">Autonomous Cars</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Aircraft Engine Anomaly Detection</h3>
+                    <p>Production-scale computer vision pipeline for Fortune 500 aviation client (Lufthansa). Built end-to-end anomaly detection system processing 10k+ aircraft images, achieving 95%+ accuracy. Deployed scalable MLOps pipeline with automated retraining and monitoring.</p>
+                    <div class="project-tags">
+                        <span class="tag">Production ML</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">MLOps</span>
+                        <span class="tag">Fortune 500</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanios13/aircraft-engine-anomaly-detection"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>LLM Security & Watermarking</h3>
+                    <p>Advanced research on Large Language Model security, implementing watermarking schemes, attack methods, and content filtering using CLIP embeddings. Published-quality research addressing critical AI safety challenges in production LLM systems.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI Safety</span>
+                        <span class="tag">LLM Security</span>
+                        <span class="tag">CLIP</span>
+                        <span class="tag">Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>LLM Prompting & Calibration</h3>
+                    <p>Comprehensive study on Large Language Model calibration using Microsoft Phi-2 and GSM8K dataset. Implemented various prompting strategies including Chain-of-Thought, subquestion decomposition, and self-consistency approaches with temperature sampling.</p>
+                    <div class="project-tags">
+                        <span class="tag">LLM Calibration</span>
+                        <span class="tag">Chain-of-Thought</span>
+                        <span class="tag">Phi-2</span>
+                        <span class="tag">vLLM</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Retrieval Augmented Generation (RAG)</h3>
+                    <p>Built a question-answering system using RAG with Google's FLAN-T5-small model. Demonstrated significant performance improvements by providing relevant context, creating an adaptable QA system that updates without retraining.</p>
+                    <div class="project-tags">
+                        <span class="tag">RAG</span>
+                        <span class="tag">FLAN-T5</span>
+                        <span class="tag">Question Answering</span>
+                        <span class="tag">Context Retrieval</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Swiss Legal Documents RAG System</h3>
+                    <p>Enterprise-grade RAG pipeline processing 50k+ legal documents for professional legal research. Built hybrid retrieval system with ColBERT embeddings, Elasticsearch, and advanced query routing. Implemented novel LLM-as-judge evaluation framework achieving 90%+ accuracy on domain-specific queries.</p>
+                    <div class="project-tags">
+                        <span class="tag">Production RAG</span>
+                        <span class="tag">Legal Tech</span>
+                        <span class="tag">ColBERT</span>
+                        <span class="tag">Enterprise Scale</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Student Dropout Prediction</h3>
+                    <p>Machine learning system to predict student dropout risk using comprehensive data science pipeline with feature engineering, model selection, and deployment using various ML frameworks.</p>
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Keras</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Private Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Pollution Forecasting with Gaussian Processes</h3>
+                    <p>Built predictive ML models using Gaussian Process regression on Europe-wide dataset for air pollution forecasting (PM2.5), achieving superior accuracy for environmental health applications.</p>
+                    <div class="project-tags">
+                        <span class="tag">Gaussian Processes</span>
+                        <span class="tag">Environmental Science</span>
+                        <span class="tag">Regression</span>
+                        <span class="tag">Meteorology</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanios13/Probabilistic-AI"><i class="fab fa-github"></i> Github</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Big Data Technologies</h3>
+                    <p>Comprehensive implementation of big data technologies including S3, DynamoDB, HDFS, and Spark for scalable data processing and analytics on large-scale distributed systems.</p>
+                    <div class="project-tags">
+                        <span class="tag">Spark</span>
+                        <span class="tag">HDFS</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">DynamoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanios13/Big-Data"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Chatbot with Custom Training Data</h3>
+                    <p>Developed intelligent chatbot enhanced with university website data using OpenAI, LangChain, and Pinecone for question-answering and information retrieval with web scraping capabilities.</p>
+                    <div class="project-tags">
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">Pinecone</span>
+                        <span class="tag">Web Scraping</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanios13/Chatbot"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Optiver Trading Challenge Winner</h3>
+                    <p>Won 200-participant hackathon by building linear regression model with advanced feature engineering for option pricing. Demonstrates quantitative finance expertise and competitive programming skills.</p>
+                    <div class="project-tags">
+                        <span class="tag">Quantitative Finance</span>
+                        <span class="tag">Feature Engineering</span>
+                        <span class="tag">Competition Winner</span>
+                        <span class="tag">Options Trading</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-trophy"></i> Winner</a>
+                    </div>
+                </div>
             </div>
-          </div><!-- End Service Item -->
+        </section>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Large Language Models</h3>
-              </a>
-              <p>Experienced in working with natural language processing techniques, including prompt engineering for
-              optimized model performance. Skilled in implementing watermarking for content authentication, building retrieval-augmented 
-              generation (RAG) systems and knowledge bases to enhance model accuracy and frameworks to develop chatbots, 
-                sentiment analysis tools, and automated text generation systems using models like GPT and BERT.</p>
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>Interested in collaborating on AI projects or discussing research opportunities? Let's connect!</p>
+                <div class="contact-links">
+                    <a href="mailto:taniosr@ethz.ch" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        taniosr@ethz.ch
+                    </a>
+                    <a href="https://linkedin.com/in/ronan-tanios" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/tanios13" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
             </div>
-          </div><!-- End Service Item -->
+        </section>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Computer Vision</h3>
-              </a>
-              <p>Skilled in developing computer vision applications using TensorFlow, PyTorch, and Keras for object detection, 
-                image segmentation, and recognition, with applications in autonomous driving.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+        <footer>
+            <p>&copy; 2025 Ronan. Built with passion for AI and innovation.</p>
+        </footer>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Software Engineering</h3>
-              </a>
-              <p>2 years of experience in software development methodologies, including backend development, concurrency and parallelism, 
-                version control systems (Git), Object Oriented Programming and CI/CD pipelines for scalable and maintainable software solutions.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+        <script>
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Cloud and Database Systems</h3>
-              </a>
-              <p>Extensive expertise in big data systems, including HDFS, key-value stores (Azure Blob Storage, Amazon S3), and massive parallel processing frameworks such as Spark and MapReduce. Possesses advanced knowledge and hands-on experience with both relational database systems (PostgreSQL) and NoSQL databases (MongoDB).</p>              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+            // Scroll progress indicator
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                document.getElementById('scrollIndicator').style.transform = `scaleX(${scrolled / 100})`;
+            });
 
-        </div>
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(10, 10, 10, 0.95)';
+                } else {
+                    nav.style.background = 'rgba(10, 10, 10, 0.9)';
+                }
+            });
 
-      </div>
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-    </section><!-- /Services Section -->
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section accent-background">
+            // Observe all project cards and skill items
+            document.querySelectorAll('.project-card, .skill-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
 
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-            <div class="col-lg-4 col-md-6">
-              <div class="stats-item text-center w-100 h-100">
-                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="0" class="purecounter">2</span>
-                <p>Years of Experience</p>
-              </div>
-            </div><!-- End Stats Item -->
-          
-            <div class="col-lg-4 col-md-6">
-              <div class="stats-item text-center w-100 h-100">
-                <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="0" class="purecounter">9</span>
-                <p>Featured Projects</p>
-              </div>
-            </div><!-- End Stats Item -->
-          
-            <div class="col-lg-4 col-md-6">
-              <div class="stats-item text-center w-100 h-100">
-                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="0" class="purecounter">2</span>
-                <p>Awards</p>
-              </div>
-            </div><!-- End Stats Item -->
-          
-          </div>
-                  
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-ml">Machine Learning</li>
-            <li data-filter=".filter-llm">Large Language Models</li>
-            <li data-filter=".filter-cv">Computer Vision</li>
-          </ul><!-- End Portfolio Filters -->
-
-                
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <!-- Machine Learning Project 1 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Student Dropout Predictor</h4>
-                <p>Machine Learning</p>
-                <a href="assets/img/portfolio/portfolio-1.jpg" 
-                title="Developed and implemented machine learning models, including neural networks, random forests, XGBoost, and linear classifiers, to achieve an 85% accuracy in predicting student dropout rates."
-                data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Large Language Model Project 1 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>University Chatbot</h4>
-                <p>Large Language Models</p>
-                <a href="assets/img/portfolio/portfolio-2.jpg" 
-                title="Built a chatbot using LangChain, Streamlit, and GPT models, incorporating a vector-based retrieval-augmented generation (RAG) database to ensure real-time updates. Additionally, utilized web scraping techniques to continuously fetch and refresh data." 
-                data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Machine Learning Project 2 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Brand Anomaly Detection</h4>
-                <p>Machine Learning</p>
-                <a href="assets/img/portfolio/portfolio-3.jpg" 
-                title="Built a machine learning model to analyze social media data using LSTM for time series forecasting, incorporating feature engineering to predict brand popularity, while addressing missing data issues and comparing results with external sources like stock prices and Google Trends for validation." 
-                data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Large Language Model Project 2 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Automated Text Analysis</h4>
-                <p>Large Language Models</p>
-                <a href="assets/img/portfolio/portfolio-4.jpg" 
-                title="Utilized state-of-the-art language models, including BERT and RoBERTa, for sentiment analysis of academic papers to assess whether the described items were secure, reliable, and well-validated." 
-                data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Machine Learning Project 3 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Air Pollution Prediction</h4>
-                <p>Machine Learning</p>
-                <a href="assets/img/portfolio/portfolio-6.jpg" 
-                title="Applied Gaussian processes and advanced statistical modeling techniques to accurately predict air pollution levels, enabling more precise environmental monitoring and forecasting." 
-                data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-            </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Machine Learning Project 4 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>House Price Prediction</h4>
-                <p>Machine Learning</p>
-                <a href="assets/img/portfolio/portfolio-6.jpg" 
-                title="Developed a linear regression model and applied feature engineering and data preprocessing techniques to predict house prices with improved accuracy." 
-                data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Large Language Model Project 3 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Calibration and Prompt Engineering</h4>
-                <p>Large Language Models</p>
-                <a href="assets/img/portfolio/portfolio-7.jpg" 
-                title="Developed techniques to fine-tune large language models (LLMs) for improved accuracy and responsiveness. This project focused on refining prompt strategies to enhance the model's understanding and generation of complex queries. " 
-                data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Large Language Model Project 4 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Building and Breaking LLM Watermark</h4>
-                <p>Large Language Models</p>
-                <a href="assets/img/portfolio/portfolio-8.jpg" 
-                title="Designed and tested a system for watermarking outputs of large language models to ensure content authenticity. Explored vulnerabilities in watermarking techniques and implemented methods to both create and break these protections." 
-                data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Large Language Model Project 5 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-llm">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Building RAG</h4>
-                <p>Large Language Models</p>
-                <a href="assets/img/portfolio/portfolio-9.jpg" 
-                title="Developed a Retrieval-Augmented Generation (RAG) system that combines large language models, such as flan-t5-small, with real-time data retrieval to improve response accuracy. The system utilizes both TF-IDF and Sentence Transformers for passage vectorization, applying similarity metrics like Euclidean distance, Cosine similarity, and Inner Product for effective retrieval. Performance was evaluated using the SQuAD dataset by comparing exact match and F1 scores, with and without retrieved passages, to assess the impact of providing relevant context on model accuracy." 
-                data-gallery="portfolio-gallery-llm" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-  
-
-  </main>
-
-  <footer id="footer" class="footer accent-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">DevFolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://www.linkedin.com/in/ronan-tanios/" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/tanios13" target="_blank"><i class="bi bi-github"></i></a>
-
-    </div>
-    
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by Ronan Tanios
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+            console.log('🚀 AI Portfolio loaded successfully!');
+        </script>
+    </body>
+    </html>
