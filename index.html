@@ -2,7 +2,9 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <title>Ronan Tanios | AI Engineer</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2300d4ff;stop-opacity:1' /><stop offset='100%25' style='stop-color:%230066ff;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23grad)'/><text x='50' y='60' font-family='Arial,sans-serif' font-size='32' font-weight='bold' text-anchor='middle' fill='white'>RT</text></svg>">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -490,12 +492,37 @@
 
             /* Responsive Design */
             @media (max-width: 768px) {
+                .nav-container {
+                    padding: 0 1rem;
+                }
+
                 .nav-links {
                     display: none;
                 }
 
+                .hero {
+                    padding: 0 1rem;
+                    height: 90vh;
+                }
+
                 .hero-content h1 {
-                    font-size: 2.5rem;
+                    font-size: 2.2rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .hero-content .subtitle {
+                    font-size: 1rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.4;
+                }
+
+                .section {
+                    padding: 3rem 1rem;
+                }
+
+                .section h2 {
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
                 }
 
                 .about-content {
@@ -503,9 +530,24 @@
                     text-align: center;
                 }
 
+                .about-text {
+                    font-size: 1rem;
+                }
+
+                .about-text p {
+                    margin-bottom: 1rem;
+                }
+
                 .contact-links {
                     flex-direction: column;
                     align-items: center;
+                    gap: 1rem;
+                }
+
+                .contact-link {
+                    width: 100%;
+                    max-width: 280px;
+                    justify-content: center;
                 }
 
                 .timeline::after {
@@ -515,7 +557,7 @@
                 .timeline-item {
                     width: 100%;
                     padding-left: 70px;
-                    padding-right: 25px;
+                    padding-right: 15px;
                 }
 
                 .timeline-item::before {
@@ -537,8 +579,84 @@
                     left: 22px;
                 }
 
+                .timeline-content {
+                    padding: 15px 20px;
+                }
+
                 .skill-grid {
                     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                    gap: 0.8rem;
+                }
+
+                .skill-item {
+                    padding: 1rem;
+                }
+
+                .skill-item i {
+                    font-size: 2rem;
+                }
+
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+
+                .project-card {
+                    padding: 1.5rem;
+                }
+
+                .project-tags {
+                    gap: 0.3rem;
+                }
+
+                .tag {
+                    font-size: 0.7rem;
+                    padding: 0.2rem 0.6rem;
+                }
+
+                .cta-button {
+                    padding: 0.8rem 1.5rem;
+                    font-size: 0.9rem;
+                }
+            }
+
+            /* iPhone specific adjustments */
+            @media (max-width: 480px) {
+                .hero-content h1 {
+                    font-size: 1.8rem;
+                }
+
+                .hero-content .subtitle {
+                    font-size: 0.9rem;
+                }
+
+                .section {
+                    padding: 2.5rem 0.8rem;
+                }
+
+                .section h2 {
+                    font-size: 1.8rem;
+                }
+
+                .skill-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                }
+
+                .timeline-item {
+                    padding-left: 60px;
+                    padding-right: 10px;
+                }
+
+                .timeline-content {
+                    padding: 12px 15px;
+                }
+
+                .project-card {
+                    padding: 1.2rem;
+                }
+
+                .about-text {
+                    font-size: 0.95rem;
                 }
             }
 
