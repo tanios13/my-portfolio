@@ -126,6 +126,21 @@
                 width: 100%;
             }
 
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 4px;
+            }
+
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background: var(--primary-color);
+                transition: all 0.3s ease;
+                border-radius: 3px;
+            }
+
             /* Hero Section */
             .hero {
                 height: 100vh;
@@ -463,8 +478,25 @@
                     padding: 0 1rem;
                 }
 
+                .hamburger {
+                    display: flex;
+                }
+
                 .nav-links {
-                    display: none;
+                    position: fixed;
+                    top: 70px;
+                    left: -100%;
+                    width: 100%;
+                    background: rgba(10, 10, 10, 0.98);
+                    flex-direction: column;
+                    padding: 2rem;
+                    gap: 1.5rem;
+                    transition: left 0.3s ease;
+                    border-top: 1px solid rgba(0, 212, 255, 0.2);
+                }
+
+                .nav-links.active {
+                    left: 0;
                 }
 
                 .hero {
@@ -640,7 +672,12 @@
         <nav>
             <div class="nav-container">
                 <div class="logo">Ronan Tanios</div>
-                <ul class="nav-links">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -1149,6 +1186,21 @@
         </footer>
 
         <script>
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
