@@ -49,7 +49,7 @@
 
             .bg-animation::before {
                 content: '';
-                position: absolute;
+                position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -57,7 +57,6 @@
                 background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
                             radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
                             radial-gradient(circle at 40% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%);
-                animation: float 6s ease-in-out infinite;
             }
 
             @keyframes float {
@@ -205,86 +204,54 @@
                 color: var(--text-secondary);
             }
 
-            /* Timeline Styles */
-            .timeline {
-                position: relative;
-                max-width: 1000px;
+            /* Experience List Styles */
+            .experience-list {
+                max-width: 800px;
                 margin: 0 auto;
             }
 
-            .timeline::after {
-                content: '';
-                position: absolute;
-                width: 3px;
-                background: var(--gradient);
-                top: 0;
-                bottom: 0;
-                left: 50%;
-                margin-left: -1.5px;
-            }
-
-            .timeline-item {
-                padding: 10px 40px;
-                position: relative;
-                background-color: inherit;
-                width: 50%;
-            }
-
-            .timeline-item::after {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                right: -10px;
-                background-color: var(--dark-bg);
-                border: 3px solid var(--primary-color);
-                top: 15px;
-                border-radius: 50%;
-                z-index: 1;
-            }
-
-            .timeline-item:nth-child(odd) {
-                left: 0;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 50%;
-            }
-
-            .timeline-item:nth-child(even)::after {
-                left: -10px;
-            }
-
-            .timeline-content {
-                padding: 20px 30px;
+            .experience-item {
+                padding: 2rem;
+                margin-bottom: 1.5rem;
                 background: var(--card-bg);
-                position: relative;
                 border-radius: 15px;
-                border: 1px solid rgba(0, 212, 255, 0.2);
+                border-left: 4px solid var(--primary-color);
                 transition: all 0.3s ease;
             }
 
-            .timeline-content:hover {
-                transform: translateY(-5px);
-                border-color: var(--primary-color);
+            .experience-item:hover {
+                transform: translateX(10px);
                 box-shadow: var(--glow);
+                border-left-color: var(--accent-color);
             }
 
-            .timeline-content h3 {
-                color: var(--primary-color);
+            .experience-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
                 margin-bottom: 0.5rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
             }
 
-            .timeline-content h4 {
-                color: var(--text-primary);
-                margin-bottom: 1rem;
-                font-weight: 600;
+            .experience-item h3 {
+                color: var(--primary-color);
+                font-size: 1.3rem;
+                margin: 0;
             }
 
-            .timeline-date {
+            .experience-date {
                 color: var(--accent-color);
-                font-weight: bold;
-                margin-bottom: 10px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                white-space: nowrap;
+            }
+
+            .experience-item h4 {
+                color: var(--text-secondary);
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-top: 0.5rem;
             }
 
             /* Skills Section */
@@ -550,37 +517,26 @@
                     justify-content: center;
                 }
 
-                .timeline::after {
-                    left: 31px;
+                .experience-item {
+                    padding: 1.5rem;
+                    margin-bottom: 1rem;
                 }
 
-                .timeline-item {
-                    width: 100%;
-                    padding-left: 70px;
-                    padding-right: 15px;
+                .experience-item:hover {
+                    transform: translateX(5px);
                 }
 
-                .timeline-item::before {
-                    left: 60px;
-                    border: medium solid var(--primary-color);
-                    border-width: 10px 10px 10px 0;
-                    border-color: transparent var(--primary-color) transparent transparent;
+                .experience-header {
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
 
-                .timeline-item:nth-child(odd) {
-                    left: 0%;
+                .experience-item h3 {
+                    font-size: 1.1rem;
                 }
 
-                .timeline-item:nth-child(even) {
-                    left: 0%;
-                }
-
-                .timeline-item::after {
-                    left: 22px;
-                }
-
-                .timeline-content {
-                    padding: 15px 20px;
+                .experience-item h4 {
+                    font-size: 1rem;
                 }
 
                 .skill-grid {
@@ -642,13 +598,16 @@
                     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
                 }
 
-                .timeline-item {
-                    padding-left: 60px;
-                    padding-right: 10px;
+                .experience-item {
+                    padding: 1.2rem;
                 }
 
-                .timeline-content {
-                    padding: 12px 15px;
+                .experience-item h3 {
+                    font-size: 1rem;
+                }
+
+                .experience-date {
+                    font-size: 0.85rem;
                 }
 
                 .project-card {
@@ -695,7 +654,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Ronan Tanios</h1>
-                <p class="subtitle">AI Engineer & Researcher | ETH Zürich MSc | Building Production ML/Software Systems at Scale</p>
+                <p class="subtitle"> Data Scientist & Software Engineer | ETH Zürich MSc | Building Production ML/Software Systems at Scale</p>
                 <a href="#projects" class="cta-button">Explore My Work</a>
             </div>
         </section>
@@ -704,68 +663,68 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>AI Engineer with hands-on experience building production ML and Software systems in leading tech environments. Currently pursuing MSc in Data Science at ETH Zürich while conducting thesis research on diffusion language models at IBM Research. Proven track record of shipping scalable AI solutions from research to production.</p>
+                    <p>Data Scientist & Software Engineer with expertise in building production-grade ML systems and scalable distributed software. Currently pursuing MSc in Data Science at ETH Zürich while conducting research on diffusion language models at IBM Research. Strong foundation in systems engineering, quantitative methods, and applied machine learning from experience at leading tech and finance firms.</p>
                     <br>
-                    <p>Expert in end-to-end ML pipelines, LLM systems, and computer vision applications. Winner of 200+ participant trading challenge (Optiver) and contributor to industry partnerships with Fortune 500 companies. Passionate about translating cutting-edge research into high-impact products.</p>
+                    <p>Specialized in high-performance computing, low-latency systems, and end-to-end ML pipelines spanning LLMs, agentic workflows, and quantitative analysis. Winner of 200+ participant Optiver trading challenge and contributor to Fortune 500 partnerships. Passionate about building robust, scalable systems that bridge theoretical research with production deployment.</p>
                 </div>
             </div>
         </section>
 
         <section id="experience" class="section">
             <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Sep 2025 – Feb 2026</div>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Visiting Researcher</h3>
-                        <h4>IBM Research Zürich</h4>
+                        <span class="experience-date">Sep 2025 – Feb 2026</span>
                     </div>
+                    <h4>IBM Research Zürich</h4>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Feb 2025 – Aug 2025</div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Machine Learning Engineer</h3>
-                        <h4>Julius Baer</h4>
+                        <span class="experience-date">Feb 2025 – Aug 2025</span>
                     </div>
+                    <h4>Julius Baer</h4>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Aug 2024 – Aug 2025</div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Teaching Assistant & Researcher</h3>
-                        <h4>ETH Zürich</h4>
+                        <span class="experience-date">Aug 2024 – Aug 2025</span>
                     </div>
+                    <h4>ETH Zürich</h4>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Sep 2024 – Jan 2025</div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Data Scientist</h3>
-                        <h4>PSI Paul Scherrer Institute</h4>
+                        <span class="experience-date">Sep 2024 – Jan 2025</span>
                     </div>
+                    <h4>PSI Paul Scherrer Institute</h4>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Feb 2024 – Aug 2024</div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Software Engineer</h3>
-                        <h4>Axpo Group</h4>
+                        <span class="experience-date">Feb 2024 – Aug 2024</span>
                     </div>
+                    <h4>Axpo Group</h4>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Aug 2023 – Sep 2023</div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Machine Learning Engineer</h3>
-                        <h4>Keyvian</h4>
+                        <span class="experience-date">Aug 2023 – Sep 2023</span>
                     </div>
+                    <h4>Keyvian</h4>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jun 2023 – Jul 2023</div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>Data Scientist</h3>
-                        <h4>CME Offshore</h4>
+                        <span class="experience-date">Jun 2023 – Jul 2023</span>
                     </div>
+                    <h4>CME Offshore</h4>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-size: 1.2rem; color: var(--primary-color); font-weight: 600;">2+ Years in AI and Software Engineering </p>
+                <p style="font-size: 1.2rem; color: var(--primary-color); font-weight: 600;">2+ Years in AI and Software Engineering</p>
             </div>
         </section>
 
@@ -790,15 +749,15 @@
                             <h4>Java</h4>
                             <span class="skill-level">Advanced</span>
                         </div>
-                        <div class="skill-item intermediate">
+                        <div class="skill-item advanced">
                             <i class="fas fa-code"></i>
-                            <h4>C</h4>
-                            <span class="skill-level">Intermediate</span>
+                            <h4>C/C++</h4>
+                            <span class="skill-level">Advanced</span>
                         </div>
-                        <div class="skill-item intermediate">
+                        <div class="skill-item advanced">
                             <i class="fas fa-project-diagram"></i>
                             <h4>Scala</h4>
-                            <span class="skill-level">Intermediate</span>
+                            <span class="skill-level">Advanced</span>
                         </div>
                         <div class="skill-item intermediate">
                             <i class="fab fa-js"></i>
@@ -832,8 +791,8 @@
                             <span class="skill-level">Advanced</span>
                         </div>
                         <div class="skill-item advanced">
-                            <i class="fas fa-cogs"></i>
-                            <h4>REST APIs</h4>
+                            <i class="fab fa-linux"></i>
+                            <h4>Linux/Unix</h4>
                             <span class="skill-level">Advanced</span>
                         </div>
                         <div class="skill-item intermediate">
@@ -844,6 +803,52 @@
                         <div class="skill-item intermediate">
                             <i class="fas fa-chart-bar"></i>
                             <h4>PowerBI</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Software Engineering</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item advanced">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Computer Networks</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-tasks"></i>
+                            <h4>Concurrency & Parallelism</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-cube"></i>
+                            <h4>Object-Oriented Design</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>High Performance Computing</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-database"></i>
+                            <h4>Distributed Systems</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Low-Latency Systems</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud Infrastructure</h4>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>System Reliability</h4>
                             <span class="skill-level">Intermediate</span>
                         </div>
                     </div>
@@ -881,6 +886,36 @@
                             <i class="fas fa-microchip"></i>
                             <h4>LLMs</h4>
                             <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Statistical Modeling</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-dice"></i>
+                            <h4>Probability & Stochastic Processes</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-square-root-alt"></i>
+                            <h4>Bayesian Inference</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-project-diagram"></i>
+                            <h4>Time Series Analysis</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item advanced">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h4>Optimization Algorithms</h4>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-item intermediate">
+                            <i class="fas fa-signal"></i>
+                            <h4>Signal Processing</h4>
+                            <span class="skill-level">Intermediate</span>
                         </div>
                     </div>
                 </div>
