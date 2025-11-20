@@ -485,18 +485,18 @@
                 .nav-links {
                     position: fixed;
                     top: 70px;
-                    left: -100%;
+                    right: -100%;
                     width: 100%;
                     background: rgba(10, 10, 10, 0.98);
                     flex-direction: column;
                     padding: 2rem;
                     gap: 1.5rem;
-                    transition: left 0.3s ease;
+                    transition: right 0.3s ease;
                     border-top: 1px solid rgba(0, 212, 255, 0.2);
                 }
 
                 .nav-links.active {
-                    left: 0;
+                    right: 0;
                 }
 
                 .hero {
@@ -1190,8 +1190,23 @@
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
 
-            hamburger.addEventListener('click', () => {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation();
                 navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('active') && 
+                    !navLinks.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            // Prevent clicks inside menu from closing it
+            navLinks.addEventListener('click', (e) => {
+                e.stopPropagation();
             });
 
             // Close menu when clicking a link
